@@ -41,3 +41,70 @@ if (precoCarne <= 45) {
 } else {
     console.log("Caro");
 }
+
+
+//função com retorno condicional    
+function isAdult(x) {
+    if (x < 18) {
+        return false
+    } else {
+        return true
+    }
+}
+
+let age = 17; //prompt("Qual a sua idade?");
+let isAdultVerification = isAdult(age);
+
+if (isAdultVerification) {
+    console.log("Acesso liberado");
+} else {
+    console.log("Acesso negado");
+}
+
+
+//Função que calcula a porcentagem entre dois números
+
+function calcPct(x, y) {
+    return (x * y) / 100;
+}
+
+let firstNumber = 10;
+let secondNumber = 100;
+// let firstNumber = prompt("Digite o primeiro número (para ser a porcentagem)");
+// let secondNumber = prompt("Digite o segundo número");
+let pct = calcPct(firstNumber, secondNumber);
+
+console.log(`${firstNumber}% de ${secondNumber} é ${pct}`)
+
+
+//Exercício 3
+/*
+Função que calcula o preço do imóvel
+- m2 = 3.000
+- 1 quarto = m2
+- 2 quartos = m2 * 1.2
+- 3 quartos = m2 * 1.5
+*/
+
+function calcularImovel(metragem, quartos) {
+    let precoDoMetro = 3000;
+    let preco = 0;
+
+    if (quartos === 1) {
+        preco = metragem * precoDoMetro;
+        console.log(`A casa custa ${formatter.format(preco)}`);
+    } else if (quartos === 2) {
+        preco = metragem * (precoDoMetro * 1.2);
+        console.log(`A casa custa ${formatter.format(preco)}`);
+    } else if (quartos === 3) {
+        preco = metragem * (precoDoMetro * 1.5);
+        console.log(`A casa custa ${formatter.format(preco)}`);
+    } else {
+        console.log(`Valor incorreto, digite um valor de 1 a 3`);
+    }
+}
+
+let metro = 123
+let quartos = 3;
+let preco = calcularImovel(metro, quartos);
+console.log(preco);
