@@ -2,11 +2,17 @@
 Exercício 1
 */
 
+const formatter = new Intl.NumberFormat('pt-BR',
+    {
+        style: 'currency',
+        currency: 'BRL'
+    });
+
 let carro = "Ferrari";
 console.log(`O carro é: ${carro}`);
 
 let precoDoBolo = 19.99;
-console.log(`O preço do bolo é: ${precoDoBolo}`);
+console.log(`O preço do bolo é: ${formatter.format(precoDoBolo)}`);
 
 let cidade = "São Paulo";
 console.log(cidade);
