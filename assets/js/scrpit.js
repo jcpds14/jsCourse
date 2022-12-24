@@ -105,6 +105,26 @@ function calcularImovel(metragem, quartos) {
 }
 
 let metro = 123
-let quartos = 3;
+let quartos = 1;
 let preco = calcularImovel(metro, quartos);
-console.log(preco);
+
+//Exercício 4
+//Função para validar usuário e senha
+
+function loginVerification(user, password) {
+    let userCorrect = 'pedro';
+    let passwordCorrect = 123;
+
+    let acessVerification = (user === userCorrect && password === passwordCorrect) ? true : false;
+
+    if (acessVerification) { 
+        console.log("Acesso permitido");
+    } else {
+        console.log("Acesso negado");
+    }
+}
+
+let username = 'Pedro';
+let password = 123;
+loginVerification(username, password);  
+
