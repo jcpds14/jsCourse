@@ -117,7 +117,7 @@ function loginVerification(user, password) {
 
     let acessVerification = (user === userCorrect && password === passwordCorrect) ? true : false;
 
-    if (acessVerification) { 
+    if (acessVerification) {
         console.log("Acesso permitido");
     } else {
         console.log("Acesso negado");
@@ -126,5 +126,51 @@ function loginVerification(user, password) {
 
 let username = 'Pedro';
 let password = 123;
-loginVerification(username, password);  
+loginVerification(username, password);
 
+
+//! ARRAY
+let colors = ['red', 'green', 'blue'];
+
+console.log(colors[1]);
+
+let cakeIngredients = [
+    'água',
+    'farinha',
+    'ovo',
+    'leite',
+    'açúcar',
+    'sal'
+]
+
+//shift = remove first item from array
+cakeIngredients.shift();
+
+//pop = remove last item from array
+cakeIngredients.pop();
+
+//push = add last item to array
+cakeIngredients.push('fermento', 'chocolate');
+
+//unshift = add first item to array
+cakeIngredients.unshift('margarina');
+
+console.log(cakeIngredients);
+
+//*Exercício 5
+//Qual o num da Ferrari
+
+let cars = ['BMW', 'FERRARI', 'MERCEDES'];
+
+// let xy = cars[1];
+console.log('1.', cars[1]);
+
+//Remove ferrari and add audi
+cars.splice(1, 1, 'AUDI');
+console.log(cars);
+
+// add volvo to array
+cars.push('VOLVO');
+
+// how many elements in array
+console.log(`${cars.length} Itens no array`);
