@@ -68,8 +68,8 @@ function calcPct(x, y) {
     return (x * y) / 100;
 }
 
-let firstNumber = 10;
-let secondNumber = 100;
+let firstNumber = 5;
+let secondNumber = 120;
 // let firstNumber = prompt("Digite o primeiro número (para ser a porcentagem)");
 // let secondNumber = prompt("Digite o segundo número");
 let pct = calcPct(firstNumber, secondNumber);
@@ -174,3 +174,24 @@ cars.push('VOLVO');
 
 // how many elements in array
 console.log(`${cars.length} Itens no array`);
+
+
+//!Obejct
+
+//Create a object with function and array
+const person = {
+    name: 'Jean',
+    lastname: 'Carlos',
+    fullname: function () {
+        this.name + this.lastname;
+    },
+    age: 25,
+    cars: [
+        'CRUZE LTZ', 'UNO MILLE', 'TORO'
+    ],
+    clothing: {
+        shirts: ['Regata', 'Polo', 'Social'],
+        trousers: ['Jeans', 'Social', 'Bermuda'],
+        shoes: ['Sapato Social', 'Tênis', 'Sapatênis']
+    }
+}
