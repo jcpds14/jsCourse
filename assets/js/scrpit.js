@@ -269,13 +269,13 @@ console.log('Loop to show all fruits');
 
 let fruits = ['banana', 'maçã', 'melão', 'uva', 'pêra', 'morango'];
 
-for (i in fruits){
+for (i in fruits) {
     console.log(fruits[i] + ' (in)');
 }
-for (fruit of fruits){
+for (fruit of fruits) {
     console.log(`${fruit} (of)`);
 }
-for (i = 0; i < fruits.length; i++){
+for (i = 0; i < fruits.length; i++) {
     console.log(fruits[i] + ' (default)');
 }
 
@@ -286,4 +286,79 @@ let countWhile = 0;
 while (countWhile <= 10) {
     console.log(`The count is ${countWhile}`);
     countWhile++;
+}
+
+//!Order array and object
+
+//Simple Order
+let animalsOrderArray = ['cat', 'dog', 'monkey', 'mouse', 'bird'];
+
+console.log('Alfabetical Order Array');
+animalsOrderArray.sort();
+console.log(animalsOrderArray);
+
+console.log('Invert Alfabetical Order Array');
+animalsOrderArray.reverse();
+console.log(animalsOrderArray);
+
+//
+console.log('Functions to Order');
+
+let carsOrderObj = [
+    { brand: 'VW', color: 'red', year: 2010 },
+    { brand: 'Toyota', color: 'black', year: 2019 },
+    { brand: 'Hyundai', color: 'blue', year: 2016 },
+    { brand: 'Fiat', color: 'white', year: 2015 },
+    { brand: 'BMW', color: 'white', year: 2010 }
+];
+
+const orderByName = carsOrderObj.sort((a, b) => {
+    if (a.brand > b.brand) {
+        return 1;
+    } else if (a.brand < b.brand) {
+        return -1;
+    } else {
+        return 0;
+    }
+});
+
+console.log(orderByName);
+
+
+/*
+*AGUARNDO RESPOSTA SOBRE ESCOPO
+const orderByYear = carsOrderObj.sort((a, b) => a.year - b.year);
+
+console.log(orderByYear);
+*/
+
+//Iteração de Array
+
+let fruitsIteracao = ['Pêra', 'Uva', 'Maçã', 'Laranja', 'Melancia', 'Maracujá'];
+
+//Filter
+let fruitsFilterFour = fruitsIteracao.filter((value) => value.length > 4);
+console.log(fruitsFilterFour);
+
+//Every
+let fruitsEvery = fruitsIteracao.every((value) => value.length < 4);
+if (fruitsEvery) {
+    console.log("Todas as frutas tem menos de 4 letras");
+} else {
+    console.log("Nem todas as frutas tem menos de 4 letras");
+}
+
+//Some
+let fruitsSome = fruitsIteracao.some((value) => value.length < 4);
+if (fruitsSome) { 
+    console.log('Existem frutas menores de 4 letras');
+} else {
+    console.log('Não existe frutas menores de 4 letras');
+}
+
+//Includes
+if (fruitsIteracao.includes('Laranja')) {
+    console.log('Tem Laranja');
+} else {
+    console.log('Não tem Laranja');
 }
