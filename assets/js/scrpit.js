@@ -195,3 +195,95 @@ const person = {
         shoes: ['Sapato Social', 'Tênis', 'Sapatênis']
     }
 }
+
+//! Loop For
+
+//Table of 9 for testing for function
+
+for (n = 0; n < 11; n++) {
+    console.log(`${9} * ${n} = ${9 * n}`);
+}
+/*
+let num = prompt('Número para tabuada:');
+for (n = 0; n < 11; n++){
+    console.log(`${num} * ${n} = ${num * n}`);
+}
+*/
+/* Table of all numbers
+for (x = 0; x <= 10; x++){
+    for (y = 0; y <= 10; y++){
+        console.log(`${x} * ${y} = ${x * y}`);
+    }
+}
+*/
+
+// For in array
+//original mode
+let colorsFor = ['red', 'green', 'blue', 'black', 'white'];
+
+for (i = 0; i < colorsFor.length; i++) {
+    console.log(`Cor ${i} ${colorsFor[i]}`);
+}
+
+//second mode
+for (i in colorsFor) {
+    console.log(colorsFor[i] + ' (in mode)');
+}
+
+//third mode
+for (color of colorsFor) {
+    console.log(color + ' (of mode)');
+}
+
+//For in and of on objetc
+
+let colorsForObj = [
+    { name: 'red', amount: 12 },
+    { name: 'green', amount: 9 },
+    { name: 'blue', amount: 15 },
+    { name: 'black', amount: 13 },
+    { name: 'white', amount: 7 }
+];
+
+for (i in colorsForObj) {
+    colorsForObj[i].name = colorsForObj[i].name.toUpperCase();
+
+    console.log(`
+    Cor: ${colorsForObj[i].name}
+    Quantidade: ${colorsForObj[i].amount}
+    `);
+}
+
+
+//! While
+
+let numbersWhile = 0;
+
+while (numbersWhile <= 10) {
+    console.log(`The number is ${numbersWhile}`);
+    numbersWhile++;
+}
+
+//* Exercise 6
+console.log('Loop to show all fruits');
+
+let fruits = ['banana', 'maçã', 'melão', 'uva', 'pêra', 'morango'];
+
+for (i in fruits){
+    console.log(fruits[i] + ' (in)');
+}
+for (fruit of fruits){
+    console.log(`${fruit} (of)`);
+}
+for (i = 0; i < fruits.length; i++){
+    console.log(fruits[i] + ' (default)');
+}
+
+//* Exercise 7
+console.log('Count from 1 to 10 using while');
+
+let countWhile = 0;
+while (countWhile <= 10) {
+    console.log(`The count is ${countWhile}`);
+    countWhile++;
+}
