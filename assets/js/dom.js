@@ -56,12 +56,13 @@ function clickBtn3() {
 
 //add elemento de acordo com o que digita ao pressionar enter
 function adicionarElemento(e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
         let adicionar = document.createElement("li");
         adicionar.innerText = document.querySelector("#texto2").value;
         document.querySelector("#test1 ul").appendChild(adicionar)
     }
 }
+//
 
 function clickBtn4() {
     const btnAfter = document.querySelector("#test1");
