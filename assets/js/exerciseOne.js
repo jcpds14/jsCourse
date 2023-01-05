@@ -1,10 +1,10 @@
 function addLi(e) {
-    if (e.keyCode === 13) {
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
         let liText = document.createElement('li');
         liText.innerText = document.querySelector('input').value;
         document.querySelector('ul').append(liText);
 
-        document.querySelector('input').value = '';
+        inputText.value = '';
     }
 }
 
