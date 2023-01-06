@@ -350,7 +350,7 @@ if (fruitsEvery) {
 
 //Some
 let fruitsSome = fruitsIteracao.some((value) => value.length < 4);
-if (fruitsSome) { 
+if (fruitsSome) {
     console.log('Existem frutas menores de 4 letras');
 } else {
     console.log('Não existe frutas menores de 4 letras');
@@ -362,3 +362,50 @@ if (fruitsIteracao.includes('Laranja')) {
 } else {
     console.log('Não tem Laranja');
 }
+
+//! OOP
+
+class Mammal {
+    constructor(species, name, age) {
+        this.species = species;
+        this.name = name;
+        this.age = age;
+
+        this.mammaryGland = true;
+    }
+
+    incrementAge() {
+        this.age++;
+    }
+}
+
+class Lion extends Mammal {
+
+    constructor(species, name, age, manEater) {
+        super(species, name, age);
+
+        this.manEater = manEater;
+    }
+
+    eatZebras(animals) {
+        return animals.filter(animal => !['zebra', 'girafa', 'hipopótamo'].includes(animal.species));
+    }
+}
+
+class Fish {
+    constructor(species, name, age) {
+        this.species = species;
+        this.name = name;
+        this.age = age;
+    }
+}
+
+const marty = new Mammal('zebra', 'Marty', 10);
+const melman = new Mammal('girafa', 'Melman', 7);
+const gloria = new Mammal('hipopótamo', 'Glória', 6);
+const alex = new Lion('leão', 'Alex', 8, false);
+const fishSushi1 = new Fish('salmão', 'peixe 1', 1);
+
+const animals = [marty, gloria, melman, fishSushi1];
+
+console.log(alex.eatZebras(animals));
