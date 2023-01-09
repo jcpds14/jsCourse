@@ -1,3 +1,5 @@
+/*
+!full method
 function clicou() {
     fetch('https://jsonplaceholder.typicode.com/comments')
         .then(response => response.json())
@@ -10,9 +12,18 @@ function clicou() {
         });
 
 }
+*/
+//!async await method
+async function clicou() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+    const json = await response.json();
 
-function insert() {
-    fetch('https://jsonplaceholder.typicode.com/comments', {
+    console.log(json);
+
+}
+//!async await mehod
+async function insert() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,8 +34,13 @@ function insert() {
             userId: 3
         })
     })
-        .then(response => response.json())
-        .then(json => console.log(json));
+    const json = await response.json();
+
+    console.log(json);
+
+    //*full method
+    // .then(response => response.json())
+    // .then(json => console.log(json));
 }
 
 document.querySelector('#button1').addEventListener('click', clicou);
