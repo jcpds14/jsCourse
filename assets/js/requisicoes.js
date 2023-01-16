@@ -1,3 +1,8 @@
+//JSON.stringify = transform JSON into string
+//JSON.parse = transform string into JSON
+console.log(JSON.stringify({a:1,b:2,c:3}))
+console.log(JSON.parse('{"a":1,"b":2,"c":3}'))
+
 /*
 !full method
 function clicou() {
@@ -21,7 +26,7 @@ async function clicou() {
     console.log(json);
 
 }
-//!async await mehod
+//!async await method
 async function insert() {
     const response = await fetch('https://jsonplaceholder.typicode.com/comments', {
         method: 'POST',
@@ -45,3 +50,25 @@ async function insert() {
 
 document.querySelector('#button1').addEventListener('click', clicou);
 document.querySelector('#insert').addEventListener('click', insert);
+
+async function insertPhotos() {
+    document.querySelector("#insertPhotos").innerHTML = "Carregando..."
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
+    const json = await response.json();
+    mountPhotos(json);
+}
+
+function mountPhotos(list) {
+    let html = '';
+
+    for (let i in list) {
+        html += `<h3>${list[i].title}</h3>`;
+        html += `<img src="${list[i].thumbnailUrl}" alt="${list[i].url}"></img></br>`;
+        html += "</hr>"
+    }
+
+    document.querySelector("#insertPhotos").innerHTML = html;
+}
+
+document.querySelector('#btnPhotos').addEventListener('click', insertPhotos);

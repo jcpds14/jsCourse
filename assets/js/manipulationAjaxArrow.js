@@ -106,3 +106,21 @@ let person = {
 let { name, lastName, age, country } = person;
 
 console.log(name, lastName, age, country);
+
+
+//!Spread Operator and Rest Operator
+
+function addNameSROperators(namesSpread, ...newNamesRest) {
+    
+    let namesConjunction = [
+        ...namesSpread,
+        ...newNamesRest
+    ];
+
+    return namesConjunction;
+}
+
+let namesSpread = ["Jean", "Jamile", "Velame"];
+let otherNamesSpreadS = addNameSROperators(namesSpread, "Maria", "João", "José");
+
+console.log(otherNamesSpreadS);
