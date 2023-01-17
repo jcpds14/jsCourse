@@ -57,6 +57,7 @@ async function insertPhotos() {
     const response = await fetch("https://jsonplaceholder.typicode.com/photos");
     const json = await response.json();
     mountPhotos(json);
+    
 }
 
 function mountPhotos(list) {
@@ -72,3 +73,60 @@ function mountPhotos(list) {
 }
 
 document.querySelector('#btnPhotos').addEventListener('click', insertPhotos);
+
+//!Post
+
+async function insertPost() { 
+    let content = document.querySelector("#insertPhotos").innerHTML = "Carregando...";
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'POST',
+        body: JSON.stringify({
+            id: 1,
+            title: 'New Title',
+            body: 'This is a new content',
+            userId: 3
+        }),
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+        },
+    });
+
+    const json = await response.json()
+
+    content = document.querySelector("#insertPhotos").innerHTML = "Carregou";
+    console.log(json);
+}
+
+document.querySelector('#insertPosts').addEventListener('click', insertPost);
+
+
+//!UPLOAD
+
+async function uploadArchives() {
+    const archive = document.querySelector("#archiveFile").files[0];
+
+    const body = new FormData();
+    body.append("title", "testing title");
+    body.append("archiveFile", archive);
+
+    const response = await fetch("https://www.sitedeexemplo.com/uploadArchives", {
+        method: 'POST',
+        body,
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+    }).catch(showThumb());
+}
+
+//!Thumbnail
+
+function showThumb() { 
+    const image = document.querySelector("#archiveFile").files[0];
+
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(image);
+    img.width = 200;
+
+    document.querySelector("#thumbImage").appendChild(img);
+}
